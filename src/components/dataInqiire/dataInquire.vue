@@ -8,10 +8,9 @@
             </div>
       </div>
       <div class="content">
-          <!-- 左部分 -->
-           <div class="left">
-              <!-- 左上 -->
-                <div class="left-top left_div">
+        <div class="top">
+            <div class="left">
+                <div class="left_div">
                     <div class="t_line_box">
                         <i class="t_l_line"></i> 
                         <i class="l_t_line"></i> 
@@ -37,37 +36,9 @@
                     </div>
                     <div id="WaterEn" class="chart"></div>
                 </div>
-              <!-- 左下 --> 
-                <div class="left-bottom left_div">
-                        <div class="t_line_box">
-                            <i class="t_l_line"></i> 
-                            <i class="l_t_line"></i> 
-                        </div> 
-                        <!--右上边框-->
-                        <div class="t_line_box">
-                            <i class="t_r_line"></i> 
-                            <i class="r_t_line"></i> 
-                        </div> 
-                        <!--左下边框-->
-                        <div class="t_line_box">
-                            <i class="l_b_line"></i> 
-                            <i class="b_l_line"></i> 
-                        </div> 
-                        <!--右下边框-->
-                        <div class="t_line_box">
-                            <i class="r_b_line"></i> 
-                            <i class="b_r_line"></i> 
-                        </div> 
-                        <div class="main_title">
-                            <img src="./img/t_4.png" alt="">
-                            环境空气
-                        </div>
-                         <div id="airEn" class="chart"></div>
-                </div>
-          </div>
-          <!-- 中间 -->
-          <div class="center">
-              <div class="center-text">
+            </div>
+            <div class="center">
+                <div class="center-text">
                     <div class="t_line_box">
                         <i class="t_l_line"></i> 
                         <i class="l_t_line"></i> 
@@ -93,36 +64,8 @@
                     </div>
                     <div id="cesiumS"></div>
               </div>
-          </div>
-          <!-- 右部分 -->
-          <div class="left">
-                <!-- 右上 -->
-                <div class="left-top left_div">
-                    <div class="t_line_box">
-                        <i class="t_l_line"></i> 
-                        <i class="l_t_line"></i> 
-                    </div> 
-                    <!--右上边框-->
-                    <div class="t_line_box">
-                        <i class="t_r_line"></i> 
-                        <i class="r_t_line"></i> 
-                    </div> 
-                    <!--左下边框-->
-                    <div class="t_line_box">
-                        <i class="l_b_line"></i> 
-                        <i class="b_l_line"></i> 
-                    </div> 
-                    <!--右下边框-->
-                    <div class="t_line_box">
-                        <i class="r_b_line"></i> 
-                        <i class="b_r_line"></i> 
-                    </div> 
-                    <div class="main_title">
-                        <img src="./img/t_7.png" alt="">
-                        气象
-                    </div>
-                </div>
-                <!-- 右下 --> 
+            </div>
+            <div class="left">
                 <div class="left-bottom left_div">
                     <div class="t_line_box">
                         <i class="t_l_line"></i> 
@@ -156,14 +99,16 @@
                         <wateData :wateId=wateId />
                     </div>
                 </div>
-          </div>
+            </div>
+        </div>
+        <div class="bottom"></div>
       </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
     import wateData from '../wateData/wataData.vue'
-  export default {
+    export default {
       data(){
           return{
             //   生态环境数据
@@ -332,19 +277,19 @@
             this.wateId = id
         }
       }
-  }
+    }
 </script>
 
 <style lang="less" scoped>
 #box{
     width: 100%;
-    height: auto;
+    height: 100%;
     color:#333;
     background-image: url(./img/true.png);
-     background-size: 100% 100%;
+    background-size: 100% 100%;
     .header{
         width: 100%;
-        height: 80px;
+        height: 100px;
         padding:0 20px;
         min-width: 1366px;
         .bg_header{
@@ -365,133 +310,143 @@
     .content{
         width: calc(100% - 40px);
         min-width: 1366px;
+        height: calc(100% - 120px);
         margin-left: 20px;
         padding-top: 20px;
-        padding-bottom: 20px;
-        display: flex;
-        align-items: flex-start;
-        .left{
-            width: 24%;
-            height: 100%;
-            .left_div{
-                width: 100%;
-                height: 280px;
-                box-sizing: border-box;
-                border: 1px solid #4788fb;
-                position: relative;
-                box-shadow: 0 0 1px #4788fb;
-                .t_line_box {
-                     position: absolute;
-                     width: 100%;
-                     height: 100%;
-                    i{
-                         background-color: #4788fb;
-                         box-shadow: 0px 0px 10px #4788fb;
-                         position: absolute;
-                    }
-                }
-                .main_title{
-                    width: 180px;
-                    height: 35px;
-                    line-height: 33px;
-                    background-color: #2C58A6;
-                    border-radius: 18px;
-                    position: absolute;
-                    top: -17px;
-                    left:50%;
-                    margin-left: -90px;
-                    color:#fff;
-                    font-size: 18px;
-                    font-weight: 600;
+        .top{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            align-items: flex-start;
+            .left{
+                width: 25%;
+                height: 100%;
+                .left_div{
+                    width: 100%;
+                    height: 80%;
                     box-sizing: border-box;
-                    padding-left: 45px;
-                    z-index: 1000;
-                    img{
+                    border: 1px solid #4788fb;
+                    position: relative;
+                    box-shadow: 0 0 1px #4788fb;
+                    .t_line_box {
                         position: absolute;
-                        top: 8px;
-                        left: 20px;
-                    }
-                }
-            }
-            .left-top{
-                   margin-bottom: 50px;
-            }
-            .left-bottom{
-                position: relative;
-                .wateCss{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    padding-top: 20px;
-                    box-sizing: border-box;
-                    color: #fff;
-                    ul{
-                        display: flex;
-                        align-items: center;
-                        li{
-                            width: calc(100% /3);
-                            text-align: center;
-                        }
-                        .active{
-                            color: aqua;
-                        }
-                    }
-                }
-            }
-        }
-        .center{
-            width: 52%;
-            height: 610px;
-            .center-text{
-                width: calc(100% - 50px);
-                height: 610px;
-                margin-left: 25px;
-                margin-right: 25px;
-                box-sizing: border-box;
-                border: 1px solid #2C58A6;
-                box-shadow: 0px 0px 6px #2C58A6;
-                position: relative;
-                .t_line_box {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    i{
+                        width: 100%;
+                        height: 100%;
+                        i{
                             background-color: #4788fb;
                             box-shadow: 0px 0px 10px #4788fb;
                             position: absolute;
+                        }
                     }
-                }
-                .main_title{
-                    width: 180px;
-                    height: 35px;
-                    line-height: 33px;
-                    background-color: #2C58A6;
-                    border-radius: 18px;
-                    position: absolute;
-                    top: -17px;
-                    left:50%;
-                    margin-left: -90px;
-                    color:#fff;
-                    font-size: 18px;
-                    font-weight: 600;
-                    box-sizing: border-box;
-                    padding-left: 45px;
-                    z-index: 1000;
-                    img{
+                    .main_title{
+                        width: 180px;
+                        height: 35px;
+                        line-height: 33px;
+                        background-color: #2C58A6;
+                        border-radius: 18px;
                         position: absolute;
-                        top: 8px;
-                        left: 20px;
+                        top: -17px;
+                        left:50%;
+                        margin-left: -90px;
+                        color:#fff;
+                        font-size: 18px;
+                        font-weight: 600;
+                        box-sizing: border-box;
+                        padding-left: 45px;
+                        z-index: 1000;
+                        img{
+                            position: absolute;
+                            top: 8px;
+                            left: 20px;
+                        }
                     }
                 }
-                #cesiumS{
-                    width: 100%;
-                    height: 610px !important;
-                    canvas{
+                .left-bottom{
+                    position: relative;
+                    .wateCss{
+                        position: absolute;
                         width: 100%;
-                        height: 610px !important;
+                        height: 100%;
+                        padding-top: 40px;
+                        box-sizing: border-box;
+                        color: #fff;
+                        ul{
+                            display: flex;
+                            align-items: center;
+                            li{
+                                width: calc(100% /3);
+                                text-align: center;
+                            }
+                            .active{
+                                color: aqua;
+                            }
+                        }
                     }
                 }
             }
+            .center{
+                width: 50%;
+                height: 100%;
+                .center-text{
+                    width: calc(100% - 50px);
+                    height: 90%;
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    box-sizing: border-box;
+                    border: 1px solid #2C58A6;
+                    box-shadow: 0px 0px 6px #2C58A6;
+                    position: relative;
+                    .t_line_box {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        i{
+                                background-color: #4788fb;
+                                box-shadow: 0px 0px 10px #4788fb;
+                                position: absolute;
+                        }
+                    }
+                    .main_title{
+                        width: 180px;
+                        height: 35px;
+                        line-height: 33px;
+                        background-color: #2C58A6;
+                        border-radius: 18px;
+                        position: absolute;
+                        top: -17px;
+                        left:50%;
+                        margin-left: -90px;
+                        color:#fff;
+                        font-size: 18px;
+                        font-weight: 600;
+                        box-sizing: border-box;
+                        padding-left: 45px;
+                        z-index: 1000;
+                        img{
+                            position: absolute;
+                            top: 8px;
+                            left: 20px;
+                        }
+                    }
+                    #cesiumS{
+                        width: 100%;
+                        height: 100% !important;
+                        canvas{
+                            width: 100%;
+                            height: 100% !important;
+                        }
+                    }
+                }
+            }
+            .right{
+                width: 25%;
+                height: 100%;
+            }
+        }
+        .bottom{
+            width: 100%;
+            height: 30%;
+            background: red;
         }
         .l_t_line{
             width: 5px;
@@ -545,7 +500,7 @@
             width: 100%;
             height: 100%;
         }
-    }
+    }   
 }
 
 </style>

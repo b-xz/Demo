@@ -54,6 +54,8 @@
                     orient: 'vertical',
                     icon: 'circle',
                     right: 5,
+                    itemHight:50,
+                    itemWight:50,
                     top:10,
                     data: ['Ⅰ类','Ⅱ类','Ⅲ类','Ⅳ类','Ⅴ类','劣Ⅴ类'],
                     textStyle:{
