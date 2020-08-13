@@ -56,6 +56,9 @@
                                 color: '#999',
                             }
                         },
+                        formatter: function(parmas){
+                            console.log(parmas,"!!!!")
+                        }
                     },
                     color:['#2db7f5','#ff6600','#C8FFFA', '#FF0000',],
                     legend: {
@@ -94,6 +97,14 @@
                             axisLabel: {
                                 //formatter: '{value}(μg/m³)'
                                 color:"#fff"
+                            },
+                            splitLine:{
+                                show: true,
+                                interval: 47,
+                                lineStyle: {
+                                    color: "rgba(197, 65, 65, 1)",
+                                    type: "dashed"
+                                }
                             }
                         },
                         {
@@ -105,6 +116,14 @@
                             axisLabel: {
                                 //formatter: '{value}(μg/m³)'
                                 color:"#fff"
+                            },
+                            splitLine:{
+                                show: true,
+                                interval: 47,
+                                lineStyle: {
+                                    color: "rgba(197, 65, 65, 1)",
+                                    type: "dashed"
+                                }
                             }
                         }
                     ],
