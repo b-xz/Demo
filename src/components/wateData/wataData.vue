@@ -46,6 +46,7 @@
           Wata(id){
               var myEchart = this.$echarts.init(document.getElementById(id))
               var option = {
+                //   悬浮显示数据
                 tooltip: {
                     trigger: 'item',
                     formatter: '{a} <br/>{b}: {c} ({d}%)'
@@ -54,8 +55,6 @@
                     orient: 'vertical',
                     icon: 'circle',
                     right: 5,
-                    itemHight:50,
-                    itemWight:50,
                     top:10,
                     data: ['Ⅰ类','Ⅱ类','Ⅲ类','Ⅳ类','Ⅴ类','劣Ⅴ类'],
                     textStyle:{
@@ -66,11 +65,12 @@
                     {
                         name: '水质类别指标',
                         type: 'pie',
-                        radius: ['50%', '70%'],
+                        radius:'90%',//控制饼状图的大小
+                        center:['40%','48%'],//控制饼状图的位置
                         label:{
                             position: 'inner',
-                             formatter:'{d}%',
-                             rotate:-45
+                            formatter:'{d}%',
+                            rotate:-45
 
                         },
                         data: [
@@ -117,16 +117,17 @@
 <style lang="less" scoped>
     #wataBox{
         width: 100%;
-        height: 210px;
+        height: 90%;
+        box-sizing: border-box;
+        padding-top: 10px;
         #waterQuality{
             width: 100%;
             height: 100%;
         }
         #nutritional{
             width: 100%;
-            height: 100%;
             ul{
-                height: 100%;
+                height: 92%;
                 box-sizing: border-box;
                 padding: 5px;
                 display: flex;
@@ -134,7 +135,7 @@
                 flex-wrap: wrap;
                 li{
                     width: calc(100% /3);
-                    height: 100px;
+                   // height: 80px;
                     box-sizing: border-box;
                     padding-right: 5px;
                     .title{
@@ -144,9 +145,9 @@
                     }
                     .num{
                         width: 100%;
-                        height: 60px;
+                        height: 50px;
                         text-align: center;
-                        line-height: 60px;
+                        line-height: 50px;
                         color: chartreuse;
                     }
                 }
